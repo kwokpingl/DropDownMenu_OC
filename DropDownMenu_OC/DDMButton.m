@@ -16,7 +16,6 @@
     UIView *            backgroundView;
     
     NSMutableArray *    items;
-//    DDMConfiguration    ddmConfig;
     BOOL                shouldShowDDM;
     int                 selectedIndex;
     CGFloat             navigationHeight;
@@ -39,6 +38,7 @@
     CGRect mainBtnFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width * 0.3, [UIApplication sharedApplication].statusBarFrame.size.height);
     
     self = [[DDMButton alloc] initWithFrame:mainBtnFrame];
+    
     
     if (self) {
         [self addTarget:self action:@selector(triggerDDM) forControlEvents:UIControlEventTouchUpInside];
@@ -149,6 +149,11 @@
     
     tv = [[UITableView alloc] initWithFrame:tableViewFrame];
     
+    CGFloat newY = [UIApplication sharedApplication].statusBarFrame.size.height;
+    newY = newY + navigationHeight;
+
+    [tv setOriginY: newY];
+    
     tv.delegate = self;
     tv.dataSource = self;
     
@@ -190,26 +195,33 @@
     [mainView setHidden:false];
     [UIView animateWithDuration:_ddmConfig.durationDrop animations:^{
         
-        CGFloat newY = [UIApplication sharedApplication].statusBarFrame.size.height;
-        newY = newY + navigationHeight;
-        
-        [tv setOriginY: newY];
+//        CGFloat newY = [UIApplication sharedApplication].statusBarFrame.size.height;
+//        newY = newY + navigationHeight;
+//        
+//        [tv setOriginY: newY];
+        [tv setHeight:items.count * _ddmConfig.cellHeight];
+        [tv reloadData];
     }];
 }
 
 - (void) closeDDM {
     [UIView animateWithDuration:_ddmConfig.durationRise animations:^{
-        [tv setOriginY: 0];
+//        [tv setOriginY: 0];
+        [tv setHeight:items.count * _ddmConfig.cellHeight];
+        [tv reloadData];
     }];
     
     [UIView animateWithDuration:_ddmConfig.durationRise animations:^{
-        CGFloat newY = items.count * _ddmConfig.cellHeight;
+//        CGFloat newY = items.count * _ddmConfig.cellHeight;
+//        
+//        newY = newY + [UIApplication sharedApplication].statusBarFrame.size.height;
+//        
+//        newY = newY + navigationHeight;
+//        
+//        [tv setOriginY: -newY];
         
-        newY = newY + [UIApplication sharedApplication].statusBarFrame.size.height;
-        
-        newY = newY + navigationHeight;
-        
-        [tv setOriginY: -newY];
+        [tv setHeight:0];
+        [tv reloadData];
         
     } completion:^(BOOL finished) {
         if (!shouldShowDDM && finished) {

@@ -11,5 +11,6 @@
 @interface UIView (JLView)
 
 - (void) setOriginY:(CGFloat) newY;
+- (void) setHeight:(CGFloat) newH;
 
 @end

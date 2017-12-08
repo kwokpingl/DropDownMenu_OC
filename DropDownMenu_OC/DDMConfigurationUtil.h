@@ -27,9 +27,9 @@ typedef struct DDMConfiguration {
     CGColorRef                              ddmBtnBackgroundColor;
     __unsafe_unretained UIImage *           ddmBtnArrowImage;
     
-    NSTimeInterval  durationDrop;
-    NSTimeInterval  durationRise;
-    BOOL            shouldChangeTitle;
+    NSTimeInterval                          durationDrop;
+    NSTimeInterval                          durationRise;
+    BOOL                                    shouldChangeTitle;
     
     CGColorRef                              backgroundColor;
     CGFloat                                 backgroundAlpha;

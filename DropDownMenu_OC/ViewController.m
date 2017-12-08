@@ -31,6 +31,10 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    
+    
+    
     ddmBtn = [[DDMButton alloc] init:self.navigationController containerView:self.view titles:titles selectedIndex:0];
     
     UIColor * bgColor = [UIColor colorWithRed:207.0/255.0 green:207.0/255.0 blue:207.0/255.0 alpha:0.5];

@@ -15,26 +15,30 @@
 + (DDMConfiguration) default {
     DDMConfiguration config;
     
-    config.cellHeight = 50;
-    config.cellTextAlignment = NSTextAlignmentLeft;
-    config.cellTextFont = [UIFont fontWithName:@"Steelworks Vintage" size:25];
-    config.cellTextColor = [UIColor colorWithRed:0.2 green:0.3 blue:0.5 alpha:0.5].CGColor;
-//    config.cellTextColor = [UIColor blackColor].CGColor;
-    config.cellSelectedColor = [UIColor grayColor].CGColor;
-    config.cellSelectedTextColor = [UIColor whiteColor].CGColor;
-    config.cellSeparatorColor = [UIColor blackColor].CGColor;
-    config.cellBackgroundColor = [UIColor whiteColor].CGColor;
-    config.cellCheckMarkImage = [UIImage imageNamed:@"CheckMark"];
+    config.cellHeight               = 50;
+    config.cellTextAlignment        = NSTextAlignmentLeft;
+    config.cellTextFont             = [UIFont fontWithName:@"Steelworks Vintage"
+                                                      size:25];
+    config.cellTextColor            = [UIColor colorWithRed:0.2
+                                                      green:0.3
+                                                       blue:0.5
+                                                      alpha:0.5].CGColor;
     
-    config.ddmBtnTitleAlignment = NSTextAlignmentLeft;
-    config.ddmBtnTitleFont = config.cellTextFont;
-    config.ddmBtnArrowImage = [UIImage imageNamed:@"Arrow"];
+    config.cellSelectedColor        = [UIColor grayColor].CGColor;
+    config.cellSelectedTextColor    = [UIColor whiteColor].CGColor;
+    config.cellSeparatorColor       = [UIColor blackColor].CGColor;
+    config.cellBackgroundColor      = [UIColor whiteColor].CGColor;
+    config.cellCheckMarkImage       = [UIImage imageNamed:@"CheckMark"];
     
-    config.durationDrop = 0.2;
-    config.durationRise = 0.2;
+    config.ddmBtnTitleAlignment     = NSTextAlignmentLeft;
+    config.ddmBtnTitleFont          = config.cellTextFont;
+    config.ddmBtnArrowImage         = [UIImage imageNamed:@"Arrow"];
     
-    config.backgroundAlpha = 0.5;
-    config.backgroundColor = [UIColor grayColor].CGColor;
+    config.durationDrop             = 0.2;
+    config.durationRise             = 0.2;
+    
+    config.backgroundAlpha          = 0.5;
+    config.backgroundColor          = [UIColor grayColor].CGColor;
     
     return config;
 }

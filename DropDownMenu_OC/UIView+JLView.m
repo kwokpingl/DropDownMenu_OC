@@ -16,4 +16,10 @@
     [self setFrame:CGRectMake(origin.x, origin.y, size.width, size.height)];
 }
 
+- (void)setHeight:(CGFloat)newH {
+    CGPoint origin = self.frame.origin;
+    CGSize size = CGSizeMake(self.frame.size.width, newH);
+    [self setFrame:CGRectMake(origin.x, origin.y, size.width, size.height)];
+}
+
 @end
